@@ -8,7 +8,6 @@ The available fields to load information from your parandval will be the followi
 
 ```jsx
 [
-  "txtFullname",
   "txtID",
   "txtFullname",
   "txtPhone",
@@ -62,7 +61,7 @@ CREATE TABLE `OTCAuto_customers` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4629 DEFAULT CHARSET=utf8;
 ```
 
-### CRMLite_management:
+### OTCAuto_management:
 
 managements history identify by id_customer
 
@@ -93,7 +92,20 @@ CREATE TABLE `OTCAuto_management` (
 ) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8;
 ```
 
-### CRMLite's report:
+### OTCAuto speachs:
+
+```sql
+CREATE TABLE `ccrepo`.`OTCAuto_speach` (
+  `id` int(100) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `speach` longtext DEFAULT NULL,
+  `queuename` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `Index_ID` (`id`),
+  KEY `Index_queuename` (`queuename`)
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8;
+```
+
+### OTCAuto's report:
 
 ```sql
 INSERT INTO ccdata.reports (name, file, description, DSN, parameters, grouped, language, license, visible)
@@ -101,7 +113,7 @@ VALUES ('OTCAuto - Management and Customer information detail', 'OTCAutoManageme
 ('OTCAuot - Detalle de gestiones y clientes', 'OTCAutoManagementCustomerDetail.jrxml', 'Gestiones realizadas sobre OTCAuto e informacion de los clientes respectivos', 'Repo', 'INITIAL_DATE:Timestamp;FINAL_DATE:Timestamp;QUEUE:Queue;', 'OTCAUTO', 'es', 'CCS', 1);
 ```
 
-## CRMLite files:
+## OTCAuto files:
 
 Put the folder named "OTCAuto" into this path:
 
